@@ -11,6 +11,10 @@
         });
       });
 
+      app.get("/packagedetail", function (req, res) {
+        res.render("packagedetail.html", {});
+      });
+
       //1. enetry point
       app.listen(port, function () {
         preLoad();
