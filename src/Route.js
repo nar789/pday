@@ -15,6 +15,10 @@
         res.render("packagedetail.html", {});
       });
 
+      app.get("/estimate", function (req, res) {
+        res.render("estimate.html", {});
+      });
+
       //1. enetry point
       app.listen(port, function () {
         preLoad();
