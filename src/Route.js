@@ -19,6 +19,10 @@
         res.render("estimate.html", {});
       });
 
+      app.get("/request", function (req, res) {
+        res.render("request.html", {});
+      });
+
       //1. enetry point
       app.listen(port, function () {
         preLoad();
