@@ -23,6 +23,10 @@
         res.render("request.html", {});
       });
 
+      app.get("/history", function (req, res) {
+        res.render("history.html", {});
+      });
+
       //1. enetry point
       app.listen(port, function () {
         preLoad();
