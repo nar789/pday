@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no, shrink-to-fit=no, viewport-fit=cover"
+    />
+
+    <link rel="apple-touch-icon" href="/assets/img/f7-icon-square.png" />
+    <link rel="icon" href="/assets/img/f7-icon.png" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="/assets/vendor/bootstrap-4.1.3/css/bootstrap.min.css"
+    />
+
+    <!-- Material design icons CSS -->
+    <link
+      rel="stylesheet"
+      href="/assets/vendor/materializeicon/material-icons.css"
+    />
+
+    <!-- swiper carousel CSS -->
+    <link rel="stylesheet" href="/assets/vendor/swiper/css/swiper.min.css" />
+
+    <!-- photoswipe CSS -->
+    <link
+      href="/assets/vendor/PhotoSwipe-master/dist/photoswipe.css"
+      rel="stylesheet"
+    />
+    <link
+      href="/assets/vendor/PhotoSwipe-master/dist/default-skin/default-skin.css"
+      rel="stylesheet"
+    />
+
+    <!-- app CSS -->
+    <link
+      id="theme"
+      rel="stylesheet"
+      href="/assets/css/style.css"
+      type="text/css"
+    />
+
+    <title>내돈내혼::packagedetail</title>
+  </head>
+
+  <body class="color-theme-blue push-content-right theme-light">
+    <div class="wrapper">
+      <!-- page main start -->
+      <div class="page">
+        <header class="row m-0 fixed-header">
+          <div class="col center">
+            <a href="" class="logo">
+              <figure><img src="/assets/img/logo-w.png" alt="" /></figure>
+              내돈내혼::review리뷰작성</a
+            >
+          </div>
+        </header>
+        <div class="page-content" style="overflow-x: hidden;">
+          <!--star box-->
+          <div
+            style="
+              height: 220px;
+              background-color: white;
+              padding: 10px;
+              text-align: center;
+            "
+          >
+            <figure class="avatar avatar-80 rounded-circle mt-4">
+              <img src="/assets/img/user2.png" alt="user image" />
+            </figure>
+            <b
+              style="font-size: 0.9rem; color: black; display: block;"
+              class="mt-1"
+            >
+              이정헌 플래너님
+            </b>
+            <div class="mt-1">
+              <i
+                id="star1"
+                class="material-icons"
+                style="font-size: 2rem; color: #999999;"
+                onclick="star_click(1)"
+                >star</i
+              >
+              <i
+                id="star2"
+                class="material-icons"
+                style="font-size: 2rem; color: #999999;"
+                onclick="star_click(2)"
+                >star</i
+              >
+              <i
+                id="star3"
+                class="material-icons"
+                style="font-size: 2rem; color: #999999;"
+                onclick="star_click(3)"
+                >star</i
+              >
+              <i
+                id="star4"
+                class="material-icons"
+                style="font-size: 2rem; color: #999999;"
+                onclick="star_click(4)"
+                >star</i
+              >
+              <i
+                id="star5"
+                class="material-icons"
+                style="font-size: 2rem; color: #999999;"
+                onclick="star_click(5)"
+                >star</i
+              >
+            </div>
+            <div class="mt-1" style="font-size: small;">
+              별을 눌러 평점을 선택해주세요
+            </div>
+          </div>
+          <hr style="margin: 0px;" />
+          <div style="background-color: white; padding: 10px;">
+            <b style="display: block;" class="mt-3 mb-3">기사님 리뷰</b>
+            <textarea
+              style="
+                border: 1px solid gray;
+                width: 100%;
+                padding: 10px;
+                font-size: small;
+              "
+              rows="10"
+              placeholder="고객님 개인 정보는 익명으로 처리되며, 내용 없이 평점만 남기실 수 있습니다. 솔직한 평가와 조언으로 파트너와 다른 고객님들께 큰 힘이 되어주세요."
+            ></textarea>
+            <b class="mt-5" style="display: block;"
+              >예식 견적 금액보다 추가 요금을 지불하셨나요? (상담비용, 자발적
+              수고비 제외)</b
+            >
+            <!--info btns-->
+            <div style="width: 100%; text-align: center;" class="mt-3">
+              <div
+                class="btn btn-outline-secondary"
+                style="
+                  font-size: 0.9rem;
+                  border: 1px solid #ced4da;
+                  width: 48%;
+                  height: 48px;
+                  line-height: 35px;
+                  font-weight: bold;
+                  text-align: center;
+                  display: inline-block;
+                "
+              >
+                아니오
+              </div>
+              <div
+                class="btn btn-outline-secondary"
+                style="
+                  font-size: 0.9rem;
+                  border: 1px solid #ced4da;
+                  width: 48%;
+                  height: 48px;
+                  line-height: 35px;
+                  font-weight: bold;
+                  text-align: center;
+                  display: inline-block;
+                "
+              >
+                예
+              </div>
+            </div>
+            <b class="mt-5" style="display: block;"
+              >플래너님을 대표하는 키워드를 하나 선택해주세요.</b
+            >
+            <!--info btns-->
+            <div style="width: 100%; text-align: center;" class="mt-3">
+              <div
+                class="btn btn-outline-secondary"
+                style="
+                  font-size: 0.9rem;
+                  border: 1px solid #ced4da;
+                  width: 48%;
+                  height: 48px;
+                  line-height: 35px;
+                  font-weight: bold;
+                  text-align: center;
+                  display: inline-block;
+                "
+              >
+                꼼꼼
+              </div>
+              <div
+                class="btn btn-outline-secondary"
+                style="
+                  font-size: 0.9rem;
+                  border: 1px solid #ced4da;
+                  width: 48%;
+                  height: 48px;
+                  line-height: 35px;
+                  font-weight: bold;
+                  text-align: center;
+                  display: inline-block;
+                "
+              >
+                신속
+              </div>
+              <div
+                class="btn btn-outline-secondary"
+                style="
+                  font-size: 0.9rem;
+                  border: 1px solid #ced4da;
+                  width: 48%;
+                  height: 48px;
+                  line-height: 35px;
+                  font-weight: bold;
+                  text-align: center;
+                  display: inline-block;
+                "
+              >
+                친절
+              </div>
+              <div
+                class="btn btn-outline-secondary"
+                style="
+                  font-size: 0.9rem;
+                  border: 1px solid #ced4da;
+                  width: 48%;
+                  height: 48px;
+                  line-height: 35px;
+                  font-weight: bold;
+                  text-align: center;
+                  display: inline-block;
+                "
+              ></div>
+            </div>
+            <b style="display: block;" class="mt-5 mb-3"
+              >내돈내혼 개선 사항 (플래너님에게 노출되지 않습니다.)</b
+            >
+            <textarea
+              style="
+                border: 1px solid gray;
+                width: 100%;
+                padding: 10px;
+                font-size: small;
+              "
+              rows="10"
+              placeholder="플랫폼 기능, 견적 프로세스, 파트너 관련 등 더 좋은 서비스를 만들 수 있도록 내돈내혼에게 다양한 목소리를 들려주세요. *필수 입력 사항은 아닙니다."
+            ></textarea>
+            <br />
+            <br />
+          </div>
+          <div style="padding: 20px;">
+            <b style="display: block;">리뷰 규정 안내</b>
+            <b style="display: block; font-size: small;" class="mt-3"
+              >후기 강요 및 임의 수정 금지</b
+            >
+            <div class="mt-3" style="font-size: small;">
+              내돈내혼은 후기 강요 및 임의 수정을 내부 규정으로 엄격히 금지하고
+              있습니다.<br />
+              플래너님으로부터 후기 관련 강압적 강요/수정 요구를 받으셨을 경우,
+              <b class="text-primary">고객센터</b>에 즉시 연락해주시기 바랍니다.
+            </div>
+            <b style="display: block; font-size: small;" class="mt-3"
+              >리뷰 제재</b
+            >
+            <div class="mt-3" style="font-size: small;">
+              사실이 아닌 경우, 명예훼손, 욕설 등은 서비스 이용약관 및 관련
+              법률에 의거하여 제재를 받을 수 있으며 짐싸는 해당 게시글을
+              삭제하거나 보이지 않게 할 수 있습니다.
+            </div>
+            <div class="btn btn-block btn-dark mt-5">확인</div>
+          </div>
+        </div>
+      </div>
+      <!-- page main ends -->
+    </div>
+
+    <!--swipegallery Root element of PhotoSwipe. Must have class pswp. -->
+    <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+      <!-- Background of PhotoSwipe. 
+             It's a separate element as animating opacity is faster than rgba(). -->
+      <div class="pswp__bg"></div>
+
+      <!-- Slides wrapper with overflow:hidden. -->
+      <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+                PhotoSwipe keeps only 3 of them in the DOM to save memory.
+                Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+          <div class="pswp__item"></div>
+          <div class="pswp__item"></div>
+          <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+          <div class="pswp__top-bar">
+            <!--  Controls are self-explanatory. Order can be changed. -->
+
+            <div class="pswp__counter"></div>
+
+            <button
+              class="pswp__button pswp__button--close"
+              title="Close (Esc)"
+            ></button>
+
+            <button
+              class="pswp__button pswp__button--share"
+              title="Share"
+            ></button>
+
+            <button
+              class="pswp__button pswp__button--fs"
+              title="Toggle fullscreen"
+            ></button>
+
+            <button
+              class="pswp__button pswp__button--zoom"
+              title="Zoom in/out"
+            ></button>
+
+            <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+            <!-- element will get class pswp_preloader-active when preloader is running -->
+            <div class="pswp__preloader">
+              <div class="pswp__preloader__icn">
+                <div class="pswp__preloader__cut">
+                  <div class="pswp__preloader__donut"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap"
+          >
+            <div class="pswp__share-tooltip"></div>
+          </div>
+
+          <button
+            class="pswp__button pswp__button--arrow--left"
+            title="Previous (arrow left)"
+          ></button>
+
+          <button
+            class="pswp__button pswp__button--arrow--right"
+            title="Next (arrow right)"
+          ></button>
+
+          <div class="pswp__caption">
+            <div class="pswp__caption__center"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="/assets/js/jquery-3.2.1.min.js"></script>
+    <script src="/assets/js/popper.min.js"></script>
+    <script src="/assets/vendor/bootstrap-4.1.3/js/bootstrap.min.js"></script>
+
+    <!-- Cookie jquery file -->
+    <script src="/assets/vendor/cookie/jquery.cookie.js"></script>
+
+    <!-- sparklines chart jquery file -->
+    <script src="/assets/vendor/sparklines/jquery.sparkline.min.js"></script>
+
+    <!-- Circular progress gauge jquery file -->
+    <script src="/assets/vendor/circle-progress/circle-progress.min.js"></script>
+
+    <!-- Swiper carousel jquery file -->
+    <script src="/assets/vendor/swiper/js/swiper.min.js"></script>
+
+    <!-- Gallery and photoswipe JavaScript -->
+    <script src="/assets/vendor/PhotoSwipe-master/dist/photoswipe.min.js"></script>
+    <script src="/assets/vendor/PhotoSwipe-master/dist/photoswipe-ui-default.min.js"></script>
+    <script src="/assets/vendor/masonry/masonry.pkgd.min.js"></script>
+
+    <!-- Application main common jquery file -->
+    <script src="/assets/js/main.js"></script>
+
+    <!-- page specific script -->
+    <script>
+      "use strict";
+      $(document).ready(function () {
+        $(".grid").masonry({
+          itemSelector: ".grid-item",
+          columnWidth: 0,
+          percentPosition: true,
+        });
+
+        // Photoswiper
+        var initPhotoSwipeFromDOM = function (gallerySelector) {
+          // parse slide data (url, title, size ...) from DOM elements
+          // (children of gallerySelector)
+          var parseThumbnailElements = function (el) {
+            var thumbElements = el.childNodes,
+              numNodes = thumbElements.length,
+              items = [],
+              figureEl,
+              linkEl,
+              size,
+              item;
+
+            for (var i = 0; i < numNodes; i++) {
+              figureEl = thumbElements[i]; // <figure> element
+
+              // include only element nodes
+              if (figureEl.nodeType !== 1) {
+                continue;
+              }
+
+              linkEl = figureEl.children[0]; // <a> element
+
+              size = linkEl.getAttribute("data-size").split("x");
+
+              // create slide object
+              item = {
+                src: linkEl.getAttribute("href"),
+                w: parseInt(size[0], 10),
+                h: parseInt(size[1], 10),
+              };
+
+              if (figureEl.children.length > 1) {
+                // <figcaption> content
+                item.title = figureEl.children[1].innerHTML;
+              }
+
+              if (linkEl.children.length > 0) {
+                // <img> thumbnail element, retrieving thumbnail url
+                item.msrc = linkEl.children[0].getAttribute("src");
+              }
+
+              item.el = figureEl; // save link to element for getThumbBoundsFn
+              items.push(item);
+            }
+
+            return items;
+          };
+
+          // find nearest parent element
+          var closest = function closest(el, fn) {
+            return el && (fn(el) ? el : closest(el.parentNode, fn));
+          };
+
+          // triggers when user clicks on thumbnail
+          var onThumbnailsClick = function (e) {
+            e = e || window.event;
+            e.preventDefault ? e.preventDefault() : (e.returnValue = false);
+
+            var eTarget = e.target || e.srcElement;
+
+            // find root element of slide
+            var clickedListItem = closest(eTarget, function (el) {
+              return el.tagName && el.tagName.toUpperCase() === "FIGURE";
+            });
+
+            if (!clickedListItem) {
+              return;
+            }
+
+            // find index of clicked item by looping through all child nodes
+            // alternatively, you may define index via data- attribute
+            var clickedGallery = clickedListItem.parentNode,
+              childNodes = clickedListItem.parentNode.childNodes,
+              numChildNodes = childNodes.length,
+              nodeIndex = 0,
+              index;
+
+            for (var i = 0; i < numChildNodes; i++) {
+              if (childNodes[i].nodeType !== 1) {
+                continue;
+              }
+
+              if (childNodes[i] === clickedListItem) {
+                index = nodeIndex;
+                break;
+              }
+              nodeIndex++;
+            }
+
+            if (index >= 0) {
+              // open PhotoSwipe if valid index found
+              openPhotoSwipe(index, clickedGallery);
+            }
+            return false;
+          };
+
+          // parse picture index and gallery index from URL (#&pid=1&gid=2)
+          var photoswipeParseHash = function () {
+            var hash = window.location.hash.substring(1),
+              params = {};
+
+            if (hash.length < 5) {
+              return params;
+            }
+
+            var vars = hash.split("&");
+            for (var i = 0; i < vars.length; i++) {
+              if (!vars[i]) {
+                continue;
+              }
+              var pair = vars[i].split("=");
+              if (pair.length < 2) {
+                continue;
+              }
+              params[pair[0]] = pair[1];
+            }
+
+            if (params.gid) {
+              params.gid = parseInt(params.gid, 10);
+            }
+
+            return params;
+          };
+
+          var openPhotoSwipe = function (
+            index,
+            galleryElement,
+            disableAnimation,
+            fromURL
+          ) {
+            var pswpElement = document.querySelectorAll(".pswp")[0],
+              gallery,
+              options,
+              items;
+
+            items = parseThumbnailElements(galleryElement);
+
+            // define options (if needed)
+            options = {
+              // define gallery index (for URL)
+              galleryUID: galleryElement.getAttribute("data-pswp-uid"),
+
+              getThumbBoundsFn: function (index) {
+                // See Options -> getThumbBoundsFn section of documentation for more info
+                var thumbnail = items[index].el.getElementsByTagName("img")[0], // find thumbnail
+                  pageYScroll =
+                    window.pageYOffset || document.documentElement.scrollTop,
+                  rect = thumbnail.getBoundingClientRect();
+
+                return {
+                  x: rect.left,
+                  y: rect.top + pageYScroll,
+                  w: rect.width,
+                };
+              },
+            };
+
+            // PhotoSwipe opened from URL
+            if (fromURL) {
+              if (options.galleryPIDs) {
+                // parse real index when custom PIDs are used
+                // http://photoswipe.com/documentation/faq.html#custom-pid-in-url
+                for (var j = 0; j < items.length; j++) {
+                  if (items[j].pid == index) {
+                    options.index = j;
+                    break;
+                  }
+                }
+              } else {
+                // in URL indexes start from 1
+                options.index = parseInt(index, 10) - 1;
+              }
+            } else {
+              options.index = parseInt(index, 10);
+            }
+
+            // exit if index not found
+            if (isNaN(options.index)) {
+              return;
+            }
+
+            if (disableAnimation) {
+              options.showAnimationDuration = 0;
+            }
+
+            // Pass data to PhotoSwipe and initialize it
+            gallery = new PhotoSwipe(
+              pswpElement,
+              PhotoSwipeUI_Default,
+              items,
+              options
+            );
+            gallery.init();
+          };
+
+          // loop through all gallery elements and bind events
+          var galleryElements = document.querySelectorAll(gallerySelector);
+
+          for (var i = 0, l = galleryElements.length; i < l; i++) {
+            galleryElements[i].setAttribute("data-pswp-uid", i + 1);
+            galleryElements[i].onclick = onThumbnailsClick;
+          }
+
+          // Parse URL and open gallery if it contains #&pid=3&gid=1
+          var hashData = photoswipeParseHash();
+          if (hashData.pid && hashData.gid) {
+            openPhotoSwipe(
+              hashData.pid,
+              galleryElements[hashData.gid - 1],
+              true,
+              true
+            );
+          }
+        };
+
+        // execute above function
+        initPhotoSwipeFromDOM(".swipegallery");
+
+        $(".swipegallery").masonry({
+          itemSelector: "figure",
+        });
+
+        $(window).on("load resize", function () {
+          $(".swipegallery").masonry({
+            itemSelector: "figure",
+          });
+        });
+      });
+    </script>
+    <!--star script-->
+    <script>
+      function star_click(id) {
+        for (var i = 1; i <= id; i++) {
+          const tag = "#star" + i;
+          $(tag).addClass("text-primary");
+        }
+        for (var i = id + 1; i <= 5; i++) {
+          const tag = "#star" + i;
+          $(tag).removeClass("text-primary");
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -27,6 +27,10 @@
         res.render("history.html", {});
       });
 
+      app.get("/review", function (req, res) {
+        res.render("review.html", {});
+      });
+
       //1. enetry point
       app.listen(port, function () {
         preLoad();
