@@ -9,6 +9,14 @@
       var fileStore;
       var multer;
       var upload;
+      var config;
+    }
+
+    function loadConfig() {
+      if (_g == null || _g === undefined) {
+        _g = new global();
+      }
+      _g.config = require("./Config");
     }
 
     function loadNodeModules() {
@@ -56,6 +64,7 @@
 
     function doInBackend() {
       loadNodeModules();
+      loadConfig();
       initialize();
       loadRoute();
     }
