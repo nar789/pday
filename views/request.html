@@ -71,32 +71,32 @@
             data-pagination='{"el": ".swiper-pagination", "type": "progressbar"}'
             \
             class="swiper-container swiper-init demo-swiper mt-3"
-            style="height: fit-content;"
+            style="height: fit-content"
           >
             <div class="swiper-pagination"></div>
             <div class="swiper-wrapper">
               <br />
               <div
                 class="swiper-slide pt-3"
-                style="display: block; overflow: scroll;"
+                style="display: block; overflow: scroll"
               >
                 <%- include("request_page1.html") %>
               </div>
               <div
                 class="swiper-slide pt-3"
-                style="display: block; overflow: scroll;"
+                style="display: block; overflow: scroll"
               >
                 <%- include("request_page2.html") %>
               </div>
               <div
                 class="swiper-slide pt-3"
-                style="display: block; overflow: scroll;"
+                style="display: block; overflow: scroll"
               >
                 <%- include("request_page3.html") %>
               </div>
               <div
                 class="swiper-slide pt-3"
-                style="display: block; overflow: scroll;"
+                style="display: block; overflow: scroll"
               >
                 <%- include("request_page4.html") %>
               </div>
@@ -222,6 +222,9 @@
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev",
         },
+      });
+      $(".next").click(() => {
+        swiper.slideNext();
       });
     </script>
 
