@@ -1,0 +1,53 @@
+<button onclick="location.href='req_list'">목록</button>
+<h3>견적요청</h3>
+<ul>
+  <li>
+    <p>예식일</p>
+    <input type="text" id="date" value="2020.12.25" /><br />
+  </li>
+  <li>
+    <p>예식시간</p>
+    <input type="text" id="time" value="13:00" /><br />
+  </li>
+  <li>
+    <p>예식장소</p>
+    <input type="text" id="place" value="서울 강남 강남웨딩홀" /><br />
+  </li>
+
+  <li>
+    <p>스드매옵션</p>
+    <input type="checkbox" name="type" value="studio" checked />스튜디오
+    <input type="checkbox" name="type" value="dress" />드레스
+    <input type="checkbox" name="type" value="makeup" checked />메이크업
+    <input type="checkbox" name="type" value="snap" />본식스냅
+  </li>
+</ul>
+<div id="output"></div>
+<button onclick="req()">신청</button>
+
+<script src="/assets/js/jquery-3.2.1.min.js"></script>
+<script>
+  function req() {
+    var ans = {};
+    ans.date = $("#date").val();
+    ans.time = $("#time").val();
+    ans.place = $("#place").val();
+    ans.type = [];
+
+    $("input:checkbox[name='type']").each(function () {
+      if (this.checked) {
+        ans.type.push(this.value);
+      }
+    });
+    $("#output").text(JSON.stringify(ans));
+    $.post(
+      "/request/db/insert",
+      {
+        info: JSON.stringify(ans),
+      },
+      (d, s) => {
+        alert(d);
+      }
+    );
+  }
+</script>

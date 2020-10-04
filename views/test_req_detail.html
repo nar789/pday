@@ -1,0 +1,38 @@
+<head>
+  <script src="/assets/js/jquery-3.2.1.min.js"></script>
+  <script>
+    function setCheckbox(cbs) {
+      var str = cbs.split(",");
+      for (var i = 0; i < str.length; i++) {
+        $("input:checkbox[value=" + str[i] + "]").prop("checked", true);
+      }
+    }
+  </script>
+</head>
+<button onclick="location.href='req_list'">목록</button>
+<h3>예식정보</h3>
+<ul>
+  <li>
+    <p>예식일</p>
+    <input type="text" id="date" value="<%=row.info2.date%>" disabled /><br />
+  </li>
+  <li>
+    <p>예식시간</p>
+    <input type="text" id="time" value="<%=row.info2.time%>" disabled /><br />
+  </li>
+  <li>
+    <p>예식장소</p>
+    <input type="text" id="place" value="<%=row.info2.place%>" disabled /><br />
+  </li>
+
+  <li>
+    <p>스드매옵션</p>
+    <input type="checkbox" name="type" value="studio" disabled />스튜디오
+    <input type="checkbox" name="type" value="dress" disabled />드레스
+    <input type="checkbox" name="type" value="makeup" disabled />메이크업
+    <input type="checkbox" name="type" value="snap" disabled />본식스냅
+    <script>
+      setCheckbox("<%=row.info2.type%>");
+    </script>
+  </li>
+</ul>

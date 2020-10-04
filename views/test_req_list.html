@@ -1,0 +1,67 @@
+<head>
+  <style>
+    table {
+      margin-top: 10px;
+      border: 1px solid gray;
+      border-collapse: collapse;
+    }
+    th,
+    tr,
+    td {
+      border: 1px solid gray;
+    }
+  </style>
+  <script src="/assets/js/jquery-3.2.1.min.js"></script>
+  <script>
+    function print_date(sqldate, id) {
+      var str = sqldate.split(" ");
+      $("#req_date" + id).text(str[4]);
+    }
+    function make_type(type, id) {
+      var str = "";
+      type = type.split(",");
+      for (var i = 0; i < type.length; i++) {
+        str = str + type[i] + "/";
+      }
+      $("#type" + id).text(str);
+    }
+  </script>
+</head>
+<h3>요청 내역</h3>
+<% for(var i=0; i < rows.length; i++) { %>
+<table onclick="location.href='req_detail?id=<%=rows[i].id%>'">
+  <tr>
+    <td colspan="2">이정헌님 예식</td>
+    <td colspan="1" style="text-align: right">
+      <u id="req_date<%=rows[i].id%>"></u>
+      <script>
+        print_date("<%=rows[i].req_date%>",<%=rows[i].id%>);
+      </script>
+      견적요청
+    </td>
+    <td colspan="1">23시간 21분 남음</td>
+  </tr>
+  <tr>
+    <td colspan="3"><b>예식정보</b></td>
+    <td rowspan="3" style="text-align: right">
+      받은 견적 <b style="font-size: large">25</b>건
+    </td>
+  </tr>
+  <tr>
+    <td><%=rows[i].info2.date%></td>
+    <td><%=rows[i].info2.time%></td>
+    <td><%=rows[i].info2.place%></td>
+  </tr>
+  <tr>
+    <td colspan="3" id="type<%=rows[i].id%>">
+      <script>
+        make_type("<%=rows[i].info2.type%>",<%=rows[i].id%>);
+      </script>
+    </td>
+  </tr>
+</table>
+<% } %>
+
+<p>
+  <button onclick="location.href='req_create'">견적신청</button>
+</p>

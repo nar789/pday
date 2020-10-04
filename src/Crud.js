@@ -6,12 +6,30 @@
 
     function route() {
       //request start
-      app.get("/request/db/insert", function (req, res) {
+      app.get("/request/db/select", function (req, res) {
+        let uid = req.query.uid;
+        let qry = `select * from request`;
+        if (uid != null) {
+          qry = qry + ` where uid=${uid}`;
+        }
+        let conn = mysql.createConnection(config);
+        conn.connect();
+        conn.query(qry, (err, rows, fields) => {
+          if (!err) {
+            res.send(JSON.stringify(rows));
+          } else {
+            res.send("fail");
+          }
+        });
+        conn.end();
+      });
+
+      app.post("/request/db/insert", function (req, res) {
         const uid = 1;
-        //infostr = req.body.info;
-        let infostr = `{"test":"value is hi"}`;
+        let infostr = req.body.info;
+        //let infostr = `{"test":"value is hi"}`;
         let info = JSON.parse(infostr); //  for test;
-        console.log(`json test, info = ${info.test}`);
+        //console.log(`json test, info = ${info.test}`);
 
         if (uid == null || infostr == null) {
           console.log("input is wrong.");
