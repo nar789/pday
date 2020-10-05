@@ -1,5 +1,7 @@
 # pday
 
+pday is platform and useful tool for wedding planner
+
 - todo
 
 ```
