@@ -100,15 +100,33 @@
       //request end
 
       //suggest start
-      app.get("/suggest/db/insert", function (req, res) {
-        const plannerId = 1;
-        //const requestId = req.body.requestId;
-        const requestId = 1; // for test
+      app.get("/suggest/db/select", function (req, res) {
+        let rid = req.query.rid;
+        let qry = `select * from suggest`;
+        if (rid != null) {
+          qry = qry + ` where request_id=${rid}`;
+        }
+        let conn = mysql.createConnection(config);
+        conn.connect();
+        conn.query(qry, (err, rows, fields) => {
+          if (!err) {
+            res.send(JSON.stringify(rows));
+          } else {
+            res.send("fail");
+          }
+        });
+        conn.end();
+      });
 
-        //infostr = req.body.info;
-        let infostr = `{"test":"value is hi"}`;
-        let info = JSON.parse(infostr); //  for test;
-        console.log(`json test, info = ${info.test}`);
+      app.post("/suggest/db/insert", function (req, res) {
+        const plannerId = 1;
+        const requestId = req.body.requestId;
+        //const requestId = 1; // for test
+
+        let infostr = req.body.info;
+        //let infostr = `{"test":"value is hi"}`;
+        //let info = JSON.parse(infostr); //  for test;
+        //console.log(`json test, info = ${info.test}`);
 
         if (plannerId == null || requestId == null || infostr == null) {
           console.log("input is wrong.");

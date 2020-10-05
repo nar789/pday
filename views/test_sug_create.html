@@ -1,0 +1,61 @@
+<button onclick="location.href='sug_list'">목록</button>
+<h3>견적제안</h3>
+<ul>
+  <li>
+    <p>스튜디오</p>
+    <input type="number" id="studio" value="10000" /><br />
+  </li>
+  <li>
+    <p>드레스</p>
+    <input type="number" id="dress" value="20000" /><br />
+  </li>
+  <li>
+    <p>메이크업</p>
+    <input type="number" id="makeup" value="30000" /><br />
+  </li>
+  <li>
+    <p>옵션</p>
+    <input type="text" id="opt" value="가나다라" /><br />
+  </li>
+  <li>
+    <p>총합</p>
+    <input type="number" id="total" disabled /><br />
+  </li>
+</ul>
+<div id="output"></div>
+<button onclick="sug(<%=rid%>)">제안</button>
+
+<script src="/assets/js/jquery-3.2.1.min.js"></script>
+<script>
+  function makeTotal() {
+    var sum = 0;
+    sum = sum + parseInt($("#studio").val());
+    sum = sum + parseInt($("#dress").val());
+    sum = sum + parseInt($("#makeup").val());
+    $("#total").val(sum);
+  }
+  function sug(rid) {
+    if (rid == null) {
+      alert("fail");
+      return;
+    }
+    makeTotal();
+    var obj = {};
+    obj.studio = $("#studio").val();
+    obj.dress = $("#dress").val();
+    obj.makeup = $("#makeup").val();
+    obj.opt = $("#opt").val();
+    obj.total = $("#total").val();
+    $("#output").text(JSON.stringify(obj));
+    $.post(
+      "/suggest/db/insert",
+      {
+        requestId: rid,
+        info: JSON.stringify(obj),
+      },
+      (d, s) => {
+        alert(d);
+      }
+    );
+  }
+</script>

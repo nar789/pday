@@ -1,0 +1,17 @@
+<h3>견적서목록</h3>
+<% for(var i=0 ; i < rows.length ; i++) { %>
+<ul>
+  <li>이정헌 플래너님</li>
+  <li>예식 0건</li>
+  <li>리뷰 0건</li>
+  <li>별점 0점</li>
+  <li>총견적</li>
+  <li><%=rows[i].info2.total%>원</li>
+</ul>
+<button onclick="location.href='sug_detail?id=<%=rows[i].id%>'">
+  견적서보기
+</button>
+<button onclick="location.href='req_detail?id=<%=rows[i].request_id%>'">
+  예식정보
+</button>
+<% } %>
