@@ -6,6 +6,7 @@ pday is platform and useful tool for wedding planner
 
 ```
 상담신청에 대한 suggest테이블에 column추가.
+=> suggest에 accept 추가
 req_detail에서 sug_list가 표시되어야 함.
 sug_list가 user에겐 플래너정보+총견적이 표시되고,
 planner에겐 유저정보+총견적이 표시되어야 함.

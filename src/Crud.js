@@ -136,7 +136,7 @@
         infostr = encodeURIComponent(infostr);
         let conn = mysql.createConnection(config);
 
-        const qry = `insert suggest values(null, ${plannerId}, ${requestId}, now(), '${infostr}')`;
+        const qry = `insert suggest values(null, ${plannerId}, ${requestId}, now(), '${infostr}', null)`;
         conn.connect();
         conn.query(qry, (err, rows, fields) => {
           if (!err) {
