@@ -39,3 +39,23 @@
 <button onclick="location.href='sug_create?rid=<%=row.id%>'">
   견적제안(only planner)
 </button>
+
+<h3>견적서목록 <%=sug_list.length%>건</h3>
+<% if(sug_list.length == 0) { %>
+<p>아직 받으신 견적이 없습니다.</p>
+<% } %> <% for(var i=0 ; i < sug_list.length ; i++) { %>
+<ul>
+  <li>이정헌 플래너님</li>
+  <li>예식 0건</li>
+  <li>리뷰 0건</li>
+  <li>별점 0점</li>
+  <li>총견적</li>
+  <li><%=sug_list[i].info2.total%>원</li>
+</ul>
+<button onclick="location.href='sug_detail?id=<%=sug_list[i].id%>'">
+  견적서보기
+</button>
+<button onclick="location.href='req_detail?id=<%=sug_list[i].request_id%>'">
+  예식정보
+</button>
+<% } %>
