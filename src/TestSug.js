@@ -85,7 +85,6 @@
         }
 
         let qry = `update suggest set accept = null where id = ${id}`;
-        console.log(qry);
         let conn = mysql.createConnection(config);
         conn.connect();
         conn.query(qry, (err, rows, fields) => {
