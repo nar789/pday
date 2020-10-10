@@ -37,7 +37,7 @@
       });
 
       app.get("/test/sug_detail", (req, res) => {
-        let id = req.query.id;
+        const id = req.query.id;
         if (id == null) {
           res.send("fail");
           return;
@@ -50,6 +50,47 @@
           if (!err && rows.length == 1) {
             rows[0].info2 = JSON.parse(decodeURIComponent(rows[0].info));
             res.render("test_sug_detail.html", { row: rows[0] });
+          } else {
+            res.send("fail");
+          }
+        });
+        conn.end();
+      });
+
+      app.get("/test/sug_accept", (req, res) => {
+        const id = req.query.id;
+        if (id == null) {
+          res.send("fail");
+          return;
+        }
+
+        let qry = `update suggest set accept = now() where id = ${id}`;
+        let conn = mysql.createConnection(config);
+        conn.connect();
+        conn.query(qry, (err, rows, fields) => {
+          if (!err) {
+            res.send("success");
+          } else {
+            res.send("fail");
+          }
+        });
+        conn.end();
+      });
+
+      app.get("/test/sug_accept_cancel", (req, res) => {
+        const id = req.query.id;
+        if (id == null) {
+          res.send("fail");
+          return;
+        }
+
+        let qry = `update suggest set accept = null where id = ${id}`;
+        console.log(qry);
+        let conn = mysql.createConnection(config);
+        conn.connect();
+        conn.query(qry, (err, rows, fields) => {
+          if (!err) {
+            res.send("success");
           } else {
             res.send("fail");
           }

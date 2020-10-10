@@ -41,4 +41,50 @@
     /><br />
   </li>
 </ul>
-<button>상담신청</button>
+<button onclick="accept(<%=row.id%>)" id="accept_btn">상담신청</button>
+<button onclick="accept_cancel(<%=row.id%>)" id="accept_cancel_btn">
+  상담취소
+</button>
+<button onclick="chat()" id="chat">채팅하기</button>
+
+<script src="/assets/js/jquery-3.2.1.min.js"></script>
+<script>
+  function btn_display(type) {
+    //type 0 : default
+    if (type == 0) {
+      $("#accept_btn").css("display", "inline-block");
+      $("#accept_cancel_btn").css("display", "none");
+      $("#chat").css("display", "none");
+    } else if (type == 1) {
+      //type 1 : accept
+      $("#accept_btn").css("display", "none");
+      $("#accept_cancel_btn").css("display", "inline-block");
+      $("#chat").css("display", "inline-block");
+    }
+  }
+  function init() {
+    <% if(row.accept == null){ %>
+    btn_display(0);
+    <% } else { %>
+      btn_display(1);
+    <% } %>
+  }
+  window.onload = init();
+  function accept(id) {
+    $.get("/test/sug_accept?id=" + id, (d, s) => {
+      alert(d);
+      if (d === "success") {
+        btn_display(1);
+      }
+    });
+  }
+
+  function accept_cancel(id) {
+    $.get("/test/sug_accept_cancel?id=" + id, (d, s) => {
+      alert(d);
+      if (d === "success") {
+        btn_display(0);
+      }
+    });
+  }
+</script>
